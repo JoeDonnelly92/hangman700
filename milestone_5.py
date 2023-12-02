@@ -2,7 +2,9 @@ import random
 #Create Hangman Class
 class Hangman:
     #Initialise attributes
-    '''Hangman is a classic guessing game! This implementation is intended to test my skills in Python.'''
+    '''Hangman is a classic guessing game! This implementation is intended to test my skills in Python.\n
+        Get started by intialising an instance, passing in a word list (list, word_list) and a number of lives (int, num_lives) and use the "play_game" method.
+    '''
     def __init__(self,word_list,num_lives):
         self.word_list = word_list
         self.word = random.choice(self.word_list)
