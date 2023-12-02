@@ -8,10 +8,10 @@ class Hangman:
     def __init__(self,word_list,num_lives):
         #initialises attributes used during gameplay
         self.word_list = word_list
-        self.word = random.choice(self.word_list)
+        self.word = random.choice(self.word_list).lower()
         self.word_guessed = ["_"] * len(self.word)
         self.num_lives = 5
-        self.num_letters = int(len(set(self.word)))
+        self.num_letters = len(set(self.word))
         self.list_of_guesses = []
 
     def check_guess(self,guess):
@@ -24,12 +24,9 @@ class Hangman:
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
             #intiialise variable to act as stand-in for position of guessed letter in word.
-            _ = -1
-            for x in self.word:
-                _ +=1
-                #Iterates through letters in random word and sets variable '_' to the index position of the correct letter(s)
+            for i,x in enumerate(self.word):
                 if guess == x:
-                    self.word_guessed[_] = guess
+                    self.word_guessed[i] = guess
                  
             self.num_letters -=1
             print(self.word_guessed)
@@ -56,7 +53,6 @@ class Hangman:
         return guess
 
     def play_game(self):
-        num_lives = 5
         while True:
             if self.num_lives == 0:
                 print("You lost!")
@@ -68,8 +64,8 @@ class Hangman:
                 break
 
 def main():
-     #Hangman(["Pineapple", "Mango", "Passionfruit", "Grape", "Banana"], 5).play_game()
-    Hangman(["Pineapple"], 5).play_game()   
+    Hangman(["Pineapple", "Mango", "Passionfruit", "Grape", "Banana"], 5).play_game()
+ 
 
 if __name__ == "__main__":
     main()
