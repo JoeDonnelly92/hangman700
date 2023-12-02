@@ -67,5 +67,10 @@ class Hangman:
                 print("Congratulations. You won the game!")
                 break
 
-Hangman(["Pineapple", "Mango", "Passionfruit", "Grape", "Banana"], 5).play_game()
+def main():
+     #Hangman(["Pineapple", "Mango", "Passionfruit", "Grape", "Banana"], 5).play_game()
+    Hangman(["Pineapple"], 5).play_game()   
+
+if __name__ == "__main__":
+    main()
 
