@@ -1,6 +1,8 @@
 import random
-
+#Create Hangman Class
 class Hangman:
+    #Initialise attributes
+    '''Hangman is a classic guessing game! This implementation is intended to test my skills in Python.'''
     def __init__(self,word_list,num_lives):
         self.word_list = word_list
         self.word = random.choice(self.word_list)
@@ -10,10 +12,12 @@ class Hangman:
         self.list_of_guesses = []
 
     def check_guess(self,guess):
+        #Checks if guessed letter is present in randomly selected word.
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
             _ = 0
             for x in self.word:
+                #Iterates through letters in random word and sets variable '_' to the index position of the correct letter(s)
                 if guess == x:
                     _ +=1
                     self.word_guessed[_] = guess
