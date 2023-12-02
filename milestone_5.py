@@ -6,6 +6,7 @@ class Hangman:
         Get started by intialising an instance, passing in a word list (list, word_list) and a number of lives (int, num_lives) and use the "play_game" method.
     '''
     def __init__(self,word_list,num_lives):
+        #initialises attributes used during gameplay
         self.word_list = word_list
         self.word = random.choice(self.word_list)
         self.word_guessed = ["_"] * len(self.word)
@@ -14,16 +15,24 @@ class Hangman:
         self.list_of_guesses = []
 
     def check_guess(self,guess):
+        '''This method is invoked once a user's guess has passed validation. \n 
+        It checks if the single letter provided by the user is present in the word. \n 
+        If the letter is not present, it subtracts a life and re-prompts. \n
+        If the letter is present then it will lower the "num_letters" variable and reprompt.
+        '''
         #Checks if guessed letter is present in randomly selected word.
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
-            _ = 0
+            #intiialise variable to act as stand-in for position of guessed letter in word.
+            _ = -1
             for x in self.word:
+                _ +=1
                 #Iterates through letters in random word and sets variable '_' to the index position of the correct letter(s)
                 if guess == x:
-                    _ +=1
                     self.word_guessed[_] = guess
+                 
             self.num_letters -=1
+            print(self.word_guessed)
         else:
             self.num_lives -=1
             print(f"Sorry, {guess} is not in the word. Try again.")
