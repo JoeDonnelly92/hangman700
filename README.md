@@ -7,7 +7,9 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 In this Project I sought to create a version of the classic game 'Hangman' in order to bring together a number of concepts learned during the Python portion of my AiCore training. These include object-oriented programming, abstraction, user input validation and more.
 
 ## Implementation
-This simple Python program takes two arguments, `word_list` and `num_lives`. As the names suggest, `word_list` should be a list containing all the words from which the user would like the computer to select from, while `num_lives` should be a positive integer value representing the number of lives a player would like to have whilst playing.
+This simple Python program takes two arguments; 1. `word_list` - a list containing all the words from which the user would like the computer to select from
+2. `num_lives` - positive integer value representing the number of lives a player would like to have whilst playing.
+
 
 Once the program has selected (using random.choice()), it will begin to prompt the user for input in the form of a single letter.
 
