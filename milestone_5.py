@@ -46,32 +46,45 @@ class Hangman:
         '''
         guess = input("Enter a letter: ").lower()
         while True:
+            #Check if guess is a single letter.
             if guess.isalpha() == False and len(guess) !=1:
+                #If input is not valid, print an error message and reprompt.
                 print("Invalid letter. Please, enter a single alphabetical character.")
                 guess = input("Enter a letter: ")
                 continue
             elif guess in self.list_of_guesses:
+                #If guess is valid but has already been used, prompt again
                 print("You already tried that letter!")
                 guess = input("Enter a letter: ")
                 continue
             else:   
+                #If guess is valid and hasn't been used before, add to list_of_guesses and run check_guess on it.
                 self.list_of_guesses.append(guess)
                 break
         self.check_guess(guess)
         return guess
 
     def play_game(self):
+        '''The play_game() method checks the number of lives and number of correct guesses that a player has made, and calls the other methods as needed.
+        
+        While num_lives > 0, the method will continue to call ask_for_input() until the user guesses all letters or runs out of lives.
+        
+        '''
         while True:
+            #Once lives reach zero, inform user and end game.
             if self.num_lives == 0:
                 print("You lost!")
                 break
+            #While user has lives left, keep prompting for guesses
             elif self.num_letters >0:
                 self.ask_for_input()
+            #If all letters are guessed correctly before lives reach zero, inform user they won and end program.
             else:
                 print("Congratulations. You won the game!")
                 break
 
 def main():
+    #Initialise an instance of hangman with below word list and 5 lives.
     Hangman(["Pineapple", "Mango", "Passionfruit", "Grape", "Banana"], 5).play_game()
  
 
