@@ -4,10 +4,10 @@ Hangman is a classic game in which a player thinks of a word and the other playe
 This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
 
 ## Background
-In this Project I sought to create a version of the classic game 'Hangman' in order to bring together a number of concepts learned during the Python portion of my AiCore training.
+In this Project I sought to create a version of the classic game 'Hangman' in order to bring together a number of concepts learned during the Python portion of my AiCore training. These include object-oriented programming, abstraction, user input validation and more.
 
 ## Implementation
-This simple Python program will use the 'Random' package to generate a random word from a pre-defined list. In the interest of keeping things simple for now, this list is short, consisting of 5 fruits. 
+This simple Python program takes two arguments, `word_list` and `num_lives`. As the names suggest, `word_list` should be a list containing all the words from which the user would like the computer to select from, while `num_lives` should be a positive integer value representing the number of lives a player would like to have whilst playing.
 
 Once the program has selected (using random.choice()), it will begin to prompt the user for input in the form of a single letter.
 
